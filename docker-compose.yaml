@@ -1,0 +1,41 @@
+version: '2'
+
+services:
+
+
+  mongo-service:
+    container_name: mongo-service
+    image: mongo:4.1.6
+    volumes:
+      - ./data/db/:/data/db
+    ports:
+      - 27017:27017
+
+  scraper-service:
+    build:
+      context: ./scraper_service
+      dockerfile: Dockerfile
+    image: task/scraper
+    ports: 
+      - 8001:80
+    container_name: scraper-service
+    volumes: 
+      - ./scraper_service/:/app/
+    depends_on: 
+      - mongo-service
+    restart: always    
+
+  updater-service:
+    build:
+      context: ./updater_service
+      dockerfile: Dockerfile
+    image: task/updater
+    ports: 
+      - 8002:80
+    container_name: updater-service
+    volumes: 
+      - ./updater_service/:/app/
+    depends_on: 
+      - mongo-service
+      - scraper-service
+    restart: always  
