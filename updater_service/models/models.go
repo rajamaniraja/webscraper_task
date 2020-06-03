@@ -14,7 +14,7 @@ type Health struct {
 	Message string `json:"message"`
 }
 
-//scraper request Model
-type ScraperRequest struct {
-	Url string `json:"url"`
+//updater response
+type UpdateResponse struct {
+	Message string `json:"message"`
 }

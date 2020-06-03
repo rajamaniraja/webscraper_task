@@ -41,5 +41,6 @@ func StoreData(w http.ResponseWriter, r *http.Request) {
 	result, err := productColl.InsertOne(context.Background(), product)
 	fmt.Println(result)
 	w.Header().Set("Content-Type", "application/json")
-	//json.NewEncoder(w).Encode(product)
+	response := models.UpdateResponse{Message: "Sucess"}
+	json.NewEncoder(w).Encode(response)
 }

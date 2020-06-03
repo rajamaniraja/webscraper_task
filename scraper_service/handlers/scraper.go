@@ -31,7 +31,16 @@ func ScrapUrl(w http.ResponseWriter, r *http.Request) {
 	url := req.Url
 	product, err = helpers.ScraperHelper(url)
 	if err != nil {
-		fmt.Println(err)
+		fmt.Fprintf(w, "Server Error")
+		w.WriteHeader(500)
+		return
+	}
+	result, err := helpers.PostScrapData(product)
+	fmt.Println(result)
+	if err != nil {
+		fmt.Fprintf(w, "Server Error")
+		w.WriteHeader(500)
+		return
 	}
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(product)
