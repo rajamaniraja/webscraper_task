@@ -18,5 +18,5 @@ func main() {
 
 	subrouter.HandleFunc("/scrap", handlers.ScrapUrl).Methods("POST")
 
-	log.Fatal(http.ListenAndServe(":3000", router))
+	log.Fatal(http.ListenAndServe(":80", router))
 }
