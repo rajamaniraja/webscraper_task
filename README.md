@@ -4,13 +4,14 @@
 
 
 # Command to Run the Application
-# docker-compose build
-# docker-compose up
+   docker-compose build
+   docker-compose up
 
 
 # API for scrap will be http://localhost:8001/api/v1/scrap 
 
-# Sample Payload {
+# Sample Payload 
+{
     "url":"https://www.amazon.com/PlayStation-4-Pro-1TB-Console/dp/B01LOP8EZC/"
  }
 
@@ -24,3 +25,4 @@
     "image_url": "{\"https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_.jpg\":[436,500],\"https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_SX466_.jpg\":[406,466],\"https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_SX425_.jpg\":[371,425],\"https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_SX450_.jpg\":[392,450],\"https://images-na.ssl-images-amazon.com/images/I/41GGPRqTZtL._AC_SX355_.jpg\":[310,355]}"
 }
 
+![Image of Yaktocat](https://github.com/rajamaniraja/webscraper_task/arch.png)
